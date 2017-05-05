@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><title>java  线程</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+<h3 id="java-线程">java  线程</h3>
+
+
+
+<h4 id="1-什么叫线程">1 什么叫线程</h4>
+
+<p>线程是指进程中的一个执行任务(控制单 元)，一个进程中可以运行多个线程,多个线程 可共享数据</p>
+
+<h4 id="2-线程与进程">2 线程与进程</h4>
+
+<p>多进程: :操作系统中同时运行的多个程序;  <br>
+多线程: :在同一个进程中同时运行的多个任 务;  <br>
+特点： 一个进程至少有一个线程，为了提高效率， 可以在一个进程中开启多个控制单元。 多个线程之间是并发运行的。</p>
+
+<h4 id="3进程与线程的区别">3进程与线程的区别：</h4>
+
+<p>1.进程有独立的进程空间，进程中的数据存放空间（堆空间和栈空间）是独立的。  <br>
+ 2.线程的堆空间是共享的，栈空间是独立 的，线程消耗的资源也比进程小，相互之间可 以影响的。</p>
+
+<h4 id="4创建线程的方法">4创建线程的方法&nbsp;</h4>
+
+
+
+<h5 id="1-继承thread类">&nbsp;&nbsp;&nbsp;&nbsp; 1 继承Thread类</h5>
+
+<p>1．子类覆写父类中的run方法，将线程运行 的代码存放在run中。  <br>
+2．建立子类对象的同时线程也被创建。  <br>
+3．通过调用start方法开启线程。</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span></span>{<br>    public void run(){<br>        <span class="hljs-type">System</span>.out.println(<span class="hljs-string">"覆写run方法"</span>);<br>    }<br>}<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span></span>{<br>    public static void main(<span class="hljs-type">String</span> [] args){<br>        <span class="hljs-type">MyThread</span> mt = <span class="hljs-keyword">new</span> <span class="hljs-type">MyThread</span>();<br>        mt.start();<br>    }<br>}<br></code></pre>
+
+<h5 id="2-实现runnable接口">2 实现Runnable接口</h5>
+
+<p>1．子类覆盖接口中的run方法。 <br>
+2．通过Thread类创建线程，并将实现了 Runnable接口的子类对象作为参数传递给Thread类的构造函数。 <br>
+3．Thread类对象调用start方法开启线程</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyThread</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Runnable</span></span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span></span>{<br>        System.out.println(<span class="hljs-string">"覆写run方法"</span>);<br>    }<br>}<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String [] args)</span></span>{<br>        MyThread mt = <span class="hljs-keyword">new</span> MyThread();<br>        <span class="hljs-keyword">new</span> Thread(mt).start();<br>    }<br>}<br></code></pre></div></body></html>
