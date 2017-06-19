@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><title>java集合二</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+<h1 id="java集合二">java集合二</h1>
+
+
+
+<h2 id="connection-set">Connection  set</h2>
+
+<p>Set是Collection子接口，Set所包含de 方法和Collection基本一样，具体可参考jdk</p>
+
+
+
+<h2 id="set">set</h2>
+
+<pre class="prettyprint hljs-dark"><code class="hljs applescript">无法记住添加的顺序，不允许包含重复元素<br><br>判断两个对象是否相等用<span class="hljs-keyword">equals</span>，而不是用==<br><br>常用子类<br>    HashSet：散列存放<br>    TreeSet：有序存放<br></code></pre>
+
+
+
+<h2 id="hashset">HashSet</h2>
+
+
+
+<h3 id="特点">特点</h3>
+
+<pre class="prettyprint hljs-dark"><code class="hljs basic"><span class="hljs-symbol">1 </span>采用hash算法存储数据具有良好的存储和查找功能<br><span class="hljs-symbol">2 </span>不记录添加顺序<br><span class="hljs-symbol">3 </span>线程不安全的，多个线程访问一个HashSet要使用同步代码（synchronized ）<br><span class="hljs-symbol">4 </span>HashSet集合元素值允许是null（最多一个）<br></code></pre>
+
+
+
+<h3 id="hash算法">hash算法</h3>
+
+<p>1 可以通过一个对象快速找到另一个对象 <br>
+2 其算法价值在于可以快速查询</p>
+
+<p>算法简述：</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs bash">        当从HashSet中访问元素时,HashSet先计算该元素的<span class="hljs-built_in">hash</span>Code，然后直接找到该元素<br></code></pre>
+
+
+
+<h3 id="treeset">TreeSet</h3>
+
+<p>对元素进行自然排序，或者是根据创建set时提供的Comparator 进行排序 <br>
+排序规则：参与排序的元素必须是同一类型的</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs pf">comparator():返回当前Set使⽤用的Comparator,若返 回null,表示以自然顺序排序。<br>Object ﬁrst()：返回<span class="hljs-built_in">set</span>中当前第一个(低)元素。<br>Object last(): 返回此 <span class="hljs-built_in">set</span> 中当前后一个(高)元素。 <br>SortedSet subSet(Object  <span class="hljs-keyword">from</span>Element, E <span class="hljs-keyword">to</span>Element): 返回此 <span class="hljs-built_in">set</span> 的部子集，其元素从 <span class="hljs-keyword">from</span>Element（包括）到 <span class="hljs-keyword">to</span>Element（不包括）。 <br>SortedSet headSet(Object  <span class="hljs-keyword">to</span>Element):返回此 <span class="hljs-built_in">set</span> 的部分⼦子集， 其元素严格小于 <span class="hljs-keyword">to</span>Element。<br>SortedSet tailSet(Object  <span class="hljs-keyword">from</span>Element) :返回此 <span class="hljs-built_in">set</span> 的部分子集，其元素大于等于 <span class="hljs-keyword">from</span>Element。<br></code></pre>
+
+<p>自然排序：实现comparable接口 覆写comparableTo方法 <br>
+定制排序：实现comparator将自己写的Comparator传入主函数 </p>
+
+
+
+<h3 id="list">List</h3>
+
+<pre class="prettyprint hljs-dark"><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-number">6</span>,<span class="hljs-string">"a"</span>)</span></span><span class="hljs-comment">//将a插入到索引为6处</span><br><span class="hljs-function"><span class="hljs-title">get</span><span class="hljs-params">(int index)</span></span> <span class="hljs-comment">//返回集合在index处元素</span><br><span class="hljs-function"><span class="hljs-title">remove</span><span class="hljs-params">(index)</span></span><span class="hljs-comment">//删除并返回index索引处的元素</span><br><span class="hljs-function"><span class="hljs-title">set</span><span class="hljs-params">(<span class="hljs-number">6</span>,<span class="hljs-string">"c"</span>)</span></span><span class="hljs-comment">//将索引为6的元素替换为c</span><br>迭代listIterator 继承了Iterator接口<br><span class="hljs-function"><span class="hljs-title">hasPervios</span><span class="hljs-params">()</span></span><span class="hljs-comment">//向上迭代</span><br>特性<br>    <span class="hljs-number">1</span> 定长<br>    <span class="hljs-number">2</span> 有序集合<br>    <span class="hljs-number">3</span> 可以重复元素 <br>    <span class="hljs-number">4</span> 可以通过索引访问<br></code></pre>
+
+<p>—ArrayList：线程不安全，增删速度快。 <br>
+—LinkedList：链表结构，查询速度快</p>
+
+
+
+<h2 id="map-hashmap">Map  HashMap</h2>
+
+<p>HashMap:Map集合最常用类 <br>
+实例</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs arduino">hm.<span class="hljs-built_in">put</span>(<span class="hljs-string">"z1"</span>, <span class="hljs-number">1</span>);<br>hm.<span class="hljs-built_in">put</span>(<span class="hljs-string">"z2"</span>, <span class="hljs-number">1</span>);<br>hm.<span class="hljs-built_in">put</span>(<span class="hljs-string">"z3"</span>, <span class="hljs-number">2</span>);    System.out.<span class="hljs-built_in">println</span>(hm);<span class="hljs-comment">//输出集合</span><br>ystem.out.<span class="hljs-built_in">println</span>(hm.<span class="hljs-built_in">get</span>(<span class="hljs-string">"z1"</span>));<span class="hljs-comment">//         查看指定key值得value值</span><br>System.out.<span class="hljs-built_in">println</span>(hm.containsKey(<span class="hljs-string">"     c"</span>));<span class="hljs-comment">//查看是否含有该key</span><br>System.out.<span class="hljs-built_in">println</span>(hm.containsValue(<span class="hljs-number">2</span>));<span class="hljs-comment">//查看是否含有该value</span><br>System.out.<span class="hljs-built_in">println</span>(hm.<span class="hljs-built_in">size</span>());<span class="hljs-comment">//查看集合中有多少元素</span><br>HashMap hm2 = <span class="hljs-keyword">new</span> HashMap();<br>hm2.putAll(hm);<span class="hljs-comment">//将集合hm复制到集合hm2中</span><br>System.out.<span class="hljs-built_in">println</span>(hm2);<span class="hljs-comment">//输出集合</span><br>hm2.<span class="hljs-built_in">remove</span>(<span class="hljs-string">"z3"</span>);<span class="hljs-comment">//指定删除</span><br>System.out.<span class="hljs-built_in">println</span>(hm2);<span class="hljs-comment">//输出集合</span><br>        hm2.<span class="hljs-built_in">clear</span>();<span class="hljs-comment">//清空集合</span><br>        System.out.<span class="hljs-built_in">println</span>(hm2);<span class="hljs-comment">//输出集合</span><br>        System.out.<span class="hljs-built_in">println</span>(hm2.isEmpty());<span class="hljs-comment">//查询集合是否为空 是返回true 否返回false</span><br>Set set = hm.entrySet();<br>Iterator it = set.iterator();<br><span class="hljs-comment">//遍历Map集合</span><br><span class="hljs-built_in">while</span>(it.hasNext()){<br>    Map.Entry mt = (Map.Entry) it.next();<br>    System.out.<span class="hljs-built_in">print</span>(mt.<span class="hljs-built_in">getKey</span>()+<span class="hljs-string">"\t"</span>+mt.getValue() );<br>    <span class="hljs-comment">//System.out.println(mt.getValue() );</span><br>}<br>hm.replace(<span class="hljs-string">"z1"</span>, <span class="hljs-number">6666</span>);<br>System.out.<span class="hljs-built_in">println</span>(hm.entrySet());<br></code></pre></div></body></html>
