@@ -1,0 +1,126 @@
+<!DOCTYPE html><html><head><title>JavaScript(2)</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+
+
+<h1 id="javascript2">JavaScript(2)</h1>
+
+<p>标签（空格分隔）： javaScript</p>
+
+
+
+<h3 id="javascript-运算符">JavaScript 运算符</h3>
+
+<ol start="1"><li rel="1">比较运算符 <br>
+var x=5； </li>
+</ol>
+
+<table>
+<thead>
+<tr>
+  <th>运算符</th>
+  <th>描述</th>
+  <th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>==</td>
+  <td>等于</td>
+  <td>x==8返回false</td>
+</tr>
+<tr>
+  <td>===</td>
+  <td>全等（值和类型）</td>
+  <td>x===5返回true；x===”5”返回false</td>
+</tr>
+<tr>
+  <td>!=</td>
+  <td>不等于</td>
+  <td>x!=5返回false</td>
+</tr>
+<tr>
+  <td>&gt;</td>
+  <td>大于</td>
+  <td>x&gt;8返回false</td>
+</tr>
+<tr>
+  <td>&lt;</td>
+  <td>小于</td>
+  <td>x&lt;8返回true</td>
+</tr>
+<tr>
+  <td>.&gt;=</td>
+  <td>大于或等于</td>
+  <td>x&gt;=8返回false</td>
+</tr>
+<tr>
+  <td>&lt;=</td>
+  <td>小于或等于</td>
+  <td>x&lt;=8返回true</td>
+</tr>
+</tbody></table>
+
+
+<ol start="2"><li rel="2">如何使用 <br>
+使用条件语句（if/while）进行判断根据返回结果进行使用</li>
+<li rel="3">条件运算符 <br>
+var x=3； <br>
+var y=4；</li>
+</ol>
+
+<table>
+<thead>
+<tr>
+  <th>运算符</th>
+  <th>描述</th>
+  <th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>&amp;&amp;</td>
+  <td>and（且）</td>
+  <td>（x&gt;3 &amp;&amp; y&lt;6）返回false</td>
+</tr>
+<tr>
+  <td>或</td>
+  <td>or（或）</td>
+  <td>(x&gt;3</td>
+</tr>
+<tr>
+  <td>！</td>
+  <td>not（非）</td>
+  <td>!(x==y)返回true</td>
+</tr>
+</tbody></table>
+
+
+<ol start="4"><li rel="4">条件运算符 <br>
+和C++中三目运算符相同</li>
+</ol>
+
+
+
+<h3 id="javascript-ifelse语句">javaScript if….else语句</h3>
+
+<p>js中if….else语句和C++基本相同</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs applescript"><span class="hljs-keyword">if</span>(条件){<br>    document.<span class="hljs-built_in">write</span>(<span class="hljs-string">"若条件成立则执行"</span>);<br>}<span class="hljs-keyword">else</span>{<br>    document.<span class="hljs-built_in">write</span>(<span class="hljs-string">"若条件不成立则执行"</span>);<br>}<br></code></pre>
+
+<p>if….else if….else</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs applescript"><span class="hljs-keyword">if</span>(条件一){<br>    document.<span class="hljs-built_in">write</span>(<span class="hljs-string">"若条件一成立则执行"</span>);<br>}<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(条件二){<br>    document.<span class="hljs-built_in">write</span>(<span class="hljs-string">"若条件二成立则执行"</span>);<br>}<span class="hljs-keyword">else</span>{<br>    document.<span class="hljs-built_in">write</span>(<span class="hljs-string">"若条件一，条件二都不成立则执行"</span>);<br>}<br></code></pre>
+
+
+
+<h3 id="javascript-switch">javaScript switch（）</h3>
+
+<p>switch选择执行代码</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs aspectj">var n=...<br><span class="hljs-keyword">switch</span>(n)<br>   {<br>   <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:<br>     执行代码块 1<br>     <span class="hljs-keyword">break</span><br>   <span class="hljs-keyword">case</span> 2:<br>     执行代码块 2<br>     <span class="hljs-keyword">break</span><br>   <span class="hljs-keyword">default</span>:<br>     如果n即不是1也不是2，则执行此代码<br>   }<br>   //<span class="hljs-keyword">switch</span>(可以为变量也可以为表达式)<br><br></code></pre></div></body></html>
